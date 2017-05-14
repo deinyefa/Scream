@@ -85,7 +85,7 @@ public class SteamVR_LaserPointer : MonoBehaviour
             this.transform.GetChild(0).gameObject.SetActive(true);
         }
 
-        float dist = 4f;
+        float dist = 3f;
 
         SteamVR_TrackedController controller = GetComponent<SteamVR_TrackedController>();
 
