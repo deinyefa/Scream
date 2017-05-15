@@ -6,16 +6,16 @@ public class ControllerInputManager : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
     public SteamVR_Controller.Device device;
+    
 
-    [Header("Teleporting")]
-    //- to teleport
+    /*[Header("Teleporting")]
     public bool isLeftController;
     public LineRenderer laser;
     private float yNudgeAmount = 0.0001f;
     public GameObject teleportAimerObject;
     public Vector3 teleportLocation;
     public GameObject player;
-    public LayerMask layerMask;
+    public LayerMask layerMask;*/
 
 
     void Awake()
@@ -27,7 +27,7 @@ public class ControllerInputManager : MonoBehaviour {
     {
         device = SteamVR_Controller.Input((int)trackedObj.index);
 
-        Teleport();
+        //Teleport();
     }
 
     void OnCollisionEnter(Collision other)
@@ -37,7 +37,7 @@ public class ControllerInputManager : MonoBehaviour {
             other.gameObject.SetActive(false);
         }
     }
-
+    /*
     void Teleport()
     {
         if (isLeftController)
@@ -85,5 +85,5 @@ public class ControllerInputManager : MonoBehaviour {
                 player.transform.position = teleportLocation;
             }
         }
-    }
+    } */
 }
