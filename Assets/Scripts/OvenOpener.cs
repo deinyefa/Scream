@@ -5,7 +5,6 @@ using UnityEngine;
 public class OvenOpener : MonoBehaviour {
 
     private Animator anim;
-    
 
 	void Awake () {
         anim = GetComponent<Animator>();
