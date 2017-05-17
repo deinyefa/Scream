@@ -22,7 +22,7 @@ public class AlmostAlive : MonoBehaviour {
     {
         if (this.gameObject.CompareTag("crawler"))
         {
-            audioSource.PlayOneShot(soundManager.crawler, 0.7f);
+            audioSource.PlayOneShot(soundManager.crawler, 0.6f);
         }
         else if (this.gameObject.CompareTag("scarecrow"))
         {

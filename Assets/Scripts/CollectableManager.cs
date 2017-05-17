@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectableManager : MonoBehaviour {
 
-    public GameObject[] collectables;
+    public List<GameObject> collectables;
 
     public bool AreCollectablesInactive()
     {
