@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class ControllerInputManager : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
     public SteamVR_Controller.Device device;
     
+	public Scoreboard scoreBoard;
+	public CollectableManager collectableManager;
 
     /*[Header("Teleporting")]
     public bool isLeftController;
@@ -31,12 +34,66 @@ public class ControllerInputManager : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision other)
-    {
+   	{
         if (other.gameObject.CompareTag("key"))
-        {
+		{
+			Debug.Log ("collider has hit" + name);
+			//- ... play sound ...
+			other.gameObject.GetComponent<SoundPlayOneshot>().Play();
+			//- display score ...
+			for (int i = collectableManager.collectables.Count; i > 0 ; i--)
+			{
+				if (collectableManager.collectables.Count >= 2)
+				{
+					scoreBoard.score.text = collectableManager.collectables.Count - 1 + " are left";
+					//- ... remove the key at index i ...
+					collectableManager.collectables.RemoveAt(i);
+					Debug.Log ("there are more than 2 collectables left in the scene");
+				}
+				else if (collectableManager.collectables.Count == 1)
+				{
+					scoreBoard.score.text = collectableManager.collectables.Count - 1 + "is left";
+					Debug.Log ("1 collectable left in the scene");
+				}
+				else if (collectableManager.collectables.Count == 0)
+				{
+					scoreBoard.score.text = "No keys are left, you are free to leave";
+					Debug.Log ("no collectable left in the scene");
+				}
+			}
+			//- ... disable gameObject
             other.gameObject.SetActive(false);
-        }
+       	}
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     void Teleport()
     {
