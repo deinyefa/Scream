@@ -16,13 +16,15 @@ public class ControllerInputManager : MonoBehaviour {
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+
+		//- Deactivate scoreboard is active
+		if (scoreBoard.score.gameObject.activeInHierarchy == true)
+			scoreBoard.score.gameObject.SetActive(false);
     }
 
     void Update()
     {
         device = SteamVR_Controller.Input((int)trackedObj.index);
-
-        //Teleport();
     }
 
 	void OnTriggerEnter(Collider other)
@@ -30,10 +32,9 @@ public class ControllerInputManager : MonoBehaviour {
 		//TODO: toggle scoreboard when controller hits a key
         if (other.gameObject.CompareTag("key"))
 		{
-			Debug.Log ("collider has hit" + name);
 			//- ... play sound ...
 			other.gameObject.GetComponent<AudioSource>().PlayOneShot(soundManager.keySound, 0.5f);
-			//- display score ...
+
 			for (int i = 0; i < collectableManager.collectables.Count; i++)
 			{
 				//- ... destroy other gameObject and remove index
@@ -42,27 +43,41 @@ public class ControllerInputManager : MonoBehaviour {
 					collectableManager.collectables.RemoveAt(i);
 			}	
 
-			switch (collectableManager.collectables.Count) {
-			case 6: 
-				scoreBoard.score.text = "5 keys are left";
-				Debug.Log ("there are more than 2 collectables left in the scene");
-				break;
-			case 5: 
-				scoreBoard.score.text = "4 keys are left";
-				break;
-			case 4: 
-				scoreBoard.score.text = "3 keys are left";
-				break;
-			case 3:
-				scoreBoard.score.text = "2 keys are left";
-				break;
-			case 2:
-				scoreBoard.score.text = "1 key is left";
-				break;
-			case 1:
-				scoreBoard.score.text = "No keys left to be taken.\nYou may leave";
-				break;
-			}
+			//- activate score board
+			scoreBoard.score.gameObject.SetActive(true);
+
+			//- Toggle Score Canvas
+			StartCoroutine (ScoreText (5f));
        	}
     }
+
+	IEnumerator ScoreText (float waitTime)
+	{
+		switch (collectableManager.collectables.Count) 
+		{
+		case 6: 
+			scoreBoard.score.text = "5 keys are left";
+			break;
+		case 5: 
+			scoreBoard.score.text = "4 keys are left";
+			break;
+		case 4: 
+			scoreBoard.score.text = "3 keys are left";
+			break;
+		case 3:
+			scoreBoard.score.text = "2 keys are left";
+			break;
+		case 2:
+			scoreBoard.score.text = "1 key is left";
+			break;
+		case 1:
+			scoreBoard.score.text = "No keys left to be taken.\nYou may leave";
+			break;
+		}
+		yield return new WaitForSeconds (waitTime);
+
+		//- Deactivate scoreboard after 5 seconds
+		if (scoreBoard.score.gameObject.activeInHierarchy == true)
+			scoreBoard.score.gameObject.SetActive(false);
+	}
 }
