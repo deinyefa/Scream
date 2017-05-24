@@ -10,7 +10,7 @@ public class CollectableManager : MonoBehaviour {
     {
         foreach (GameObject collectable in collectables)
         {
-            if (collectable.gameObject.activeSelf == true)
+            if (collectable.gameObject != null)
             {
                 return false;
             }
