@@ -29,7 +29,6 @@ public class ControllerInputManager : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
    	{
-		//TODO: toggle scoreboard when controller hits a key
         if (other.gameObject.CompareTag("key"))
 		{
 			//- ... play sound ...
@@ -49,6 +48,11 @@ public class ControllerInputManager : MonoBehaviour {
 			//- Toggle Score Canvas
 			StartCoroutine (ScoreText (5f));
        	}
+
+		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) && other.gameObject.CompareTag("door")) {
+			Door door = GameObject.FindObjectOfType<Door> ();
+			door.LoadNextLevel ();
+		}
     }
 
 	IEnumerator ScoreText (float waitTime)
@@ -71,7 +75,7 @@ public class ControllerInputManager : MonoBehaviour {
 			scoreBoard.score.text = "1 key is left";
 			break;
 		case 1:
-			scoreBoard.score.text = "No keys left to be taken.\nYou may leave";
+			scoreBoard.score.text = "No keys left to be taken.\nTouch the door to leave";
 			break;
 		}
 		yield return new WaitForSeconds (waitTime);
