@@ -36,13 +36,14 @@ public class ControllerInputManager : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
    	{
+		//TODO: toggle scoreboard when controller hits a key
         if (other.gameObject.CompareTag("key"))
 		{
 			Debug.Log ("collider has hit" + name);
 			//- ... play sound ...
 			other.gameObject.GetComponent<AudioSource>().PlayOneShot(soundManager.keySound, 0.5f);
 			//- display score ...
-			for (int i = collectableManager.collectables.Count; i > 0 ; i--)
+			for (int i = 0; i < collectableManager.collectables.Count; i++)
 			{
 				if (collectableManager.collectables.Count >= 2)
 				{

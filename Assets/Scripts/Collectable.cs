@@ -17,9 +17,8 @@ public class Collectable : MonoBehaviour {
        // sound = GetComponent<SoundPlayOneshot>();
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-		Debug.Log(name + "has been collided with");
+//    void OnCollisionEnter(Collision other)
+//    {
         //- when controller touches it...
 //		if (other.gameObject.CompareTag("controller"))
 //        {
@@ -50,5 +49,5 @@ public class Collectable : MonoBehaviour {
 //            //- ... disable gameObject
 //            this.gameObject.SetActive(false);
 //        }
-    }
+   //}
 }
