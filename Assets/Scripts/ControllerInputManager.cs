@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class ControllerInputManager : MonoBehaviour {
 
@@ -10,6 +10,7 @@ public class ControllerInputManager : MonoBehaviour {
     
 	public Scoreboard scoreBoard;
 	public CollectableManager collectableManager;
+	public SoundManager soundManager;
 
     /*[Header("Teleporting")]
     public bool isLeftController;
@@ -33,13 +34,13 @@ public class ControllerInputManager : MonoBehaviour {
         //Teleport();
     }
 
-    void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
    	{
         if (other.gameObject.CompareTag("key"))
 		{
 			Debug.Log ("collider has hit" + name);
 			//- ... play sound ...
-			other.gameObject.GetComponent<SoundPlayOneshot>().Play();
+			other.gameObject.GetComponent<AudioSource>().PlayOneShot(soundManager.keySound, 0.5f);
 			//- display score ...
 			for (int i = collectableManager.collectables.Count; i > 0 ; i--)
 			{

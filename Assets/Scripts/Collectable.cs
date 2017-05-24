@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Collectable : MonoBehaviour {
 
     private AudioSource audioSource;
-	private SoundPlayOneshot sound;
 
 //    public Scoreboard scoreBoard;
 //    public CollectableManager collectableManager;
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        sound = GetComponent<SoundPlayOneshot>();
+		audioSource = GetComponent<AudioSource> ();
+       // sound = GetComponent<SoundPlayOneshot>();
     }
 
     void OnCollisionEnter(Collision other)
     {
+		Debug.Log(name + "has been collided with");
         //- when controller touches it...
 //		if (other.gameObject.CompareTag("controller"))
 //        {
