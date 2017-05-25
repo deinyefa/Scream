@@ -49,9 +49,18 @@ public class ControllerInputManager : MonoBehaviour {
 			StartCoroutine (ScoreText (5f));
        	}
 
-		if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger) && other.gameObject.CompareTag("door")) {
+		if  (device.GetPress(SteamVR_Controller.ButtonMask.Trigger)) 
+		{
 			Door door = GameObject.FindObjectOfType<Door> ();
-			door.LoadNextLevel ();
+
+			if (other.gameObject.CompareTag ("door")) 
+			{
+				door.LoadStartScreen ();
+			}
+			else if (other.gameObject.CompareTag("sphere")) 
+			{
+				door.LoadGameScene ();
+			}
 		}
     }
 
