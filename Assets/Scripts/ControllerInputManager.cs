@@ -49,11 +49,11 @@ public class ControllerInputManager : MonoBehaviour {
 			StartCoroutine (ScoreText (5f));
        	}
 
-		if  (device.GetPress(SteamVR_Controller.ButtonMask.Trigger)) 
+		if  (other.gameObject.CompareTag ("door")) 
 		{
 			Door door = GameObject.FindObjectOfType<Door> ();
 
-			if (other.gameObject.CompareTag ("door")) 
+			if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger)) 
 			{
 				door.LoadStartScreen ();
 			}

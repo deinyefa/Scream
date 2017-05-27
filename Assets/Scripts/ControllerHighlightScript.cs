@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using VRTK;
 using VRTK.Highlighters;
 
@@ -40,6 +41,11 @@ public class ControllerHighlightScript : MonoBehaviour {
 
 			//- alpha value of the color runs from 0 to 1
 			controllerHighlighter.highlightTouchpad = Color.Lerp (Color.red, Color.clear, Mathf.PingPong(Time.time, 1));
+		}
+		if (device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad))
+		{
+			//- set the highlight color of the touchpad
+			controllerHighlighter.highlightTouchpad = Color.clear;
 		}
 	}
 
