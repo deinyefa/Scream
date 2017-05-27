@@ -19,7 +19,8 @@ public class AlmostAlive : MonoBehaviour {
     }
 
     IEnumerator PlayCreatureSound (float waitTime)
-    {
+	{
+		yield return new WaitForSeconds(waitTime);
         if (this.gameObject.CompareTag("crawler"))
         {
             audioSource.PlayOneShot(soundManager.crawler, 0.6f);
@@ -28,7 +29,6 @@ public class AlmostAlive : MonoBehaviour {
         {
             audioSource.PlayOneShot(soundManager.scarecrow, 0.7f);
         }
-        yield return new WaitForSeconds(waitTime);
     }
 
 }

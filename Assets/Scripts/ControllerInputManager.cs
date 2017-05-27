@@ -57,10 +57,6 @@ public class ControllerInputManager : MonoBehaviour {
 			{
 				door.LoadStartScreen ();
 			}
-			else if (other.gameObject.CompareTag("sphere")) 
-			{
-				door.LoadGameScene ();
-			}
 		}
     }
 

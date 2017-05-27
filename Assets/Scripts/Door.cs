@@ -8,8 +8,4 @@ public class Door : MonoBehaviour {
 	public void LoadStartScreen () {
 		SteamVR_LoadLevel.Begin ("StartScene");
 	}
-
-	public void LoadGameScene () {
-		SteamVR_LoadLevel.Begin ("Fear");
-	}
 }
