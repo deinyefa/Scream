@@ -15,21 +15,11 @@ public class VariableSetup : MonoBehaviour {
 	private SoundManager soundManager;
 	private Light spotlight;
 
-	private bool isInFearScene = false;
-
-	void Update () 
-	{
-		SetupVariables ();
-		if (isInFearScene)
-			SetupVariables ();
-	}
 
 	public void SetupVariables ()
 	{
 		if (SceneManager.GetActiveScene().name == "Fear") 
 		{
-			isInFearScene = true;
-
 			//- find the controller manager script in each of the controllers...
 			leftControllerInputManager = leftController.GetComponent<ControllerInputManager> ();
 			rightControllerInputManager = rightController.GetComponent<ControllerInputManager> ();
@@ -43,7 +33,7 @@ public class VariableSetup : MonoBehaviour {
 			rightControllerInputManager.soundManager = GameObject.FindObjectOfType<SoundManager> ();
 
 			//- find and enable the spotlight in the cameraHead gameObject
-			spotlight = cameraEye.GetComponentInChildren<Light> ();
+			spotlight = GetComponentInChildren<Light> ();
 			spotlight.enabled = true;
 		}
 	}

@@ -19,6 +19,7 @@ public class ControllerHighlightScript : MonoBehaviour {
 
 	private HighlightObjects highlightObject;
 
+
 	void Awake () 
 	{	
 		trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -42,7 +43,7 @@ public class ControllerHighlightScript : MonoBehaviour {
 			//- alpha value of the color runs from 0 to 1
 			controllerHighlighter.highlightTouchpad = Color.Lerp (Color.red, Color.clear, Mathf.PingPong(Time.time, 1));
 		}
-		if (device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad))
+		else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad))
 		{
 			//- set the highlight color of the touchpad
 			controllerHighlighter.highlightTouchpad = Color.clear;

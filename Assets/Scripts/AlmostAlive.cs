@@ -5,12 +5,15 @@ using UnityEngine;
 public class AlmostAlive : MonoBehaviour {
 
     private AudioSource audioSource;
+	private VariableSetup variableSetup;
 
     public SoundManager soundManager;
 
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+		variableSetup = GameObject.FindObjectOfType<VariableSetup> ();
+		variableSetup.SetupVariables ();
     }
 
     void Start()
