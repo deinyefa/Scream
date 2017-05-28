@@ -10,7 +10,7 @@ public class ControllerHighlightScript : MonoBehaviour {
 	private SteamVR_TrackedObject trackedObj;
 	public SteamVR_Controller.Device device;
 
-	private bool hasPressedTrigger = false;
+	private bool hasPressedTouchpad = false;
 
 	public VRTK_ControllerHighlighter controllerHighlighter;
 	public VRTK_OutlineObjectCopyHighlighter objectOutlineScript;
@@ -30,12 +30,13 @@ public class ControllerHighlightScript : MonoBehaviour {
 	void Update () 
 	{
 		device = SteamVR_Controller.Input((int)trackedObj.index);
-		HighLightTrigger ();
+		if (isLeftController)
+			HighLightTouchPad ();
 	}
 
 	void HighLightTouchPad () 
 	{
-		if (!device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad))
+		if (!device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad) && !hasPressedTouchpad)
 		{
 			//- set the highlight color of the touchpad
 			controllerHighlighter.highlightTouchpad = highlightColor;
@@ -45,33 +46,34 @@ public class ControllerHighlightScript : MonoBehaviour {
 		}
 		else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Touchpad))
 		{
+			hasPressedTouchpad = true;
 			//- set the highlight color of the touchpad
 			controllerHighlighter.highlightTouchpad = Color.clear;
 		}
 	}
 
-	void HighLightTrigger () 
-	{
-		if (isLeftController) {
-			if (!device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger) && !hasPressedTrigger)
-			{
-				//- set the highlight color of the trigger
-				controllerHighlighter.highlightTrigger = highlightColor;
-
-				//- set the highlight color of the body and alpha value of
-				//- trigger from 0 to 1
-				controllerHighlighter.highlightBody = Color.clear;
-				controllerHighlighter.highlightTrigger = Color.Lerp (Color.red, Color.clear, Mathf.PingPong(Time.time, 1));
-			}
-			else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) 
-			{
-				//- when player presses the trigger, colors go back to normal
-				hasPressedTrigger = true;
-				controllerHighlighter.highlightTrigger = Color.clear;
-				controllerHighlighter.highlightBody = Color.clear;
-			}
-		}
-	}
+//	void HighLightTrigger () 
+//	{
+//		if (isLeftController) {
+//			if (!device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger) && !hasPressedTrigger)
+//			{
+//				//- set the highlight color of the trigger
+//				controllerHighlighter.highlightTrigger = highlightColor;
+//
+//				//- set the highlight color of the body and alpha value of
+//				//- trigger from 0 to 1
+//				controllerHighlighter.highlightBody = Color.clear;
+//				controllerHighlighter.highlightTrigger = Color.Lerp (Color.red, Color.clear, Mathf.PingPong(Time.time, 1));
+//			}
+//			else if (device.GetPressDown (SteamVR_Controller.ButtonMask.Trigger)) 
+//			{
+//				//- when player presses the trigger, colors go back to normal
+//				hasPressedTrigger = true;
+//				controllerHighlighter.highlightTrigger = Color.clear;
+//				controllerHighlighter.highlightBody = Color.clear;
+//			}
+//		}
+//	}
 
 	void OnTriggerEnter (Collider other)
 	{
