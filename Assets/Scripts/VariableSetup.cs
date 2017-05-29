@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VRTK;
 
 public class VariableSetup : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class VariableSetup : MonoBehaviour {
 	private ControllerInputManager leftControllerInputManager;
 	private ControllerInputManager rightControllerInputManager;
 	private CollectableManager collectableManager;
+	private VRTK_StraightPointerRenderer laserPointer;
+	private VRTK_Pointer pointer;
 	private SoundManager soundManager;
 	private Light spotlight;
 
@@ -28,13 +31,23 @@ public class VariableSetup : MonoBehaviour {
 			leftControllerInputManager.collectableManager = GameObject.FindObjectOfType<CollectableManager> ();
 			rightControllerInputManager.collectableManager = GameObject.FindObjectOfType<CollectableManager> ();
 
+			//- ... find and disable the scripts that control teleportation...
+			laserPointer = GetComponentInChildren<VRTK_StraightPointerRenderer> ();
+			laserPointer.enabled = false;
+			pointer = GetComponentInChildren<VRTK_Pointer> ();
+			pointer.enabled = false;
+
 			//- ...find and set the sound manager in each...
 			leftControllerInputManager.soundManager = GameObject.FindObjectOfType<SoundManager> ();
 			rightControllerInputManager.soundManager = GameObject.FindObjectOfType<SoundManager> ();
 
-			//- find and enable the spotlight in the cameraHead gameObject
+			//- find and enable the spotlight in the cameraHead gameObject...
 			spotlight = GetComponentInChildren<Light> ();
 			spotlight.enabled = true;
+
+			//- ... enable them again later
+			laserPointer.enabled = true;
+			pointer.enabled = true;
 		}
 	}
 }
