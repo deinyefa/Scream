@@ -18,9 +18,11 @@ public class SoundManager : MonoBehaviour {
 	{
 		if (instance == null)
 			instance = this;
-		else if (instance != null)
+		else if (instance != this)
 			Destroy (gameObject);
+
 		DontDestroyOnLoad (gameObject);
+
 		if (SceneManager.GetActiveScene().name == "StartScene")
 		{
 			playSound = GetComponent<PlaySound> ();

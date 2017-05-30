@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class PlayAmbientSounds : MonoBehaviour {
+public class DontDestroyVRTKManager : MonoBehaviour {
 
 	public static DontDestroyVRTKManager instance = null;
 
@@ -11,7 +11,7 @@ public class PlayAmbientSounds : MonoBehaviour {
 	{
 		if (instance == null)
 			instance = this;
-		else if (instance != null)
+		else if (instance != this)
 			Destroy (gameObject);
 		DontDestroyOnLoad (gameObject);
 	}
