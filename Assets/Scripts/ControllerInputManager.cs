@@ -34,7 +34,7 @@ public class ControllerInputManager : MonoBehaviour {
         if (other.gameObject.CompareTag("key"))
 		{
 			//- ... play sound ...
-			other.gameObject.GetComponent<PlaySound>().Play();
+			collectableManager.GetComponent<PlaySound>().Play();
 
 			for (int i = 0; i < collectableManager.collectables.Count; i++)
 			{
