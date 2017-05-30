@@ -4,19 +4,19 @@ serves as my final project in the Udacity VR Nanodegree and it contains all the 
 
 # Achievements
 ### Fundamentals 
-. Scale (normal human height) - 100 points
-. Animation - 100 points 
-. Locomotion - 100 points
-. Lighting - 100 points
-. Video Player - 100 points (200 points for completing lighting achievement)
+* Scale (normal human height) - 100 points
+* Animation - 100 points 
+* Locomotion - 100 points
+* Lighting - 100 points
+* Video Player - 100 points (200 points for completing lighting achievement)
 
 ### Completeness
-. 3D Modelling - 250 points
-. Gamification - 250 points
-. Diegetic UI - 250 points
+* 3D Modelling - 250 points
+* Gamification - 250 points
+* Diegetic UI - 250 points
 
 ### Challenges 
-. User Testing - 250 points (500 points for completing 750 points in completeness)
+* User Testing - 250 points (500 points for completing 750 points in completeness)
 
 *see a video of the gameplay here*
 
