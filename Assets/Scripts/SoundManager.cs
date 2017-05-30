@@ -6,6 +6,8 @@ using Valve.VR.InteractionSystem;
 
 public class SoundManager : MonoBehaviour {
     
+	public static SoundManager instance = null;
+
     public AudioClip keySound;
     public AudioClip crawler;
     public AudioClip scarecrow;
@@ -14,7 +16,11 @@ public class SoundManager : MonoBehaviour {
 
 	void Awake ()
 	{
-		DontDestroyOnLoad (this.gameObject);
+		if (instance == null)
+			instance = this;
+		else if (instance != null)
+			Destroy (gameObject);
+		DontDestroyOnLoad (gameObject);
 		if (SceneManager.GetActiveScene().name == "StartScene")
 		{
 			playSound = GetComponent<PlaySound> ();

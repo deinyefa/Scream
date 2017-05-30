@@ -5,15 +5,14 @@ using Valve.VR.InteractionSystem;
 
 public class PlayAmbientSounds : MonoBehaviour {
 
-	private PlaySound playSound;
+	public static DontDestroyVRTKManager instance = null;
 
 	void Awake ()
 	{
-		playSound = GetComponent<PlaySound> ();
-	}
-
-	void Start () 
-	{
-		playSound.PlayLooping ();
+		if (instance == null)
+			instance = this;
+		else if (instance != null)
+			Destroy (gameObject);
+		DontDestroyOnLoad (gameObject);
 	}
 }
