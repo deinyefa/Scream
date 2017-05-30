@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class ControllerInputManager : MonoBehaviour {
 
@@ -28,11 +29,12 @@ public class ControllerInputManager : MonoBehaviour {
     }
 
 	void OnTriggerEnter(Collider other)
-   	{
+	{
+		Door door = GameObject.FindObjectOfType<Door> ();
         if (other.gameObject.CompareTag("key"))
 		{
 			//- ... play sound ...
-			other.gameObject.GetComponent<AudioSource>().PlayOneShot(soundManager.keySound, 0.5f);
+			other.gameObject.GetComponent<PlaySound>().Play();
 
 			for (int i = 0; i < collectableManager.collectables.Count; i++)
 			{
@@ -51,12 +53,7 @@ public class ControllerInputManager : MonoBehaviour {
 
 		if  (other.gameObject.CompareTag ("door")) 
 		{
-			Door door = GameObject.FindObjectOfType<Door> ();
-
-			if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger)) 
-			{
-				door.LoadStartScreen ();
-			}
+			door.LoadStartScreen ();
 		}
     }
 

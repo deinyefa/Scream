@@ -14,8 +14,7 @@ public class SoundManager : MonoBehaviour {
 
 	void Awake ()
 	{
-		if (gameObject.activeInHierarchy != true)
-			DontDestroyOnLoad (this.gameObject);
+		DontDestroyOnLoad (this.gameObject);
 		if (SceneManager.GetActiveScene().name == "StartScene")
 		{
 			playSound = GetComponent<PlaySound> ();
