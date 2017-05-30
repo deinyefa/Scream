@@ -19,9 +19,8 @@ serves as my final project in the Udacity VR Nanodegree and it contains all the 
 * User Testing - 250 points (500 points for completing 750 points in completeness)
 
 # External Links
-* Gameplay
-[Scream Game-play](https://vimeo.com/219580150)
-[Scream Walk-through](google.com)
+* Gameplay - [Scream Game-play](https://vimeo.com/219580150)
+* Walkthrough - [Scream Walk-through](https://vimeo.com/219586458)
 
 # Build
 To play, download the project and open the Build folder. In it you will find the PCBuild.
