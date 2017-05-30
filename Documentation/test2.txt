@@ -1,0 +1,26 @@
+Final user test
+
+About
+- by this point, i had added:
+	. diegetic features - to remove the need of adding too much text to the scene. for example, the touchpad on the
+				left controller blinks to show the player how to teleport and the keys animate to show
+				they can be interacted with
+	. sounds - background music, key collected music and monster sounds
+	. animation - of keys and monsters 
+	. minimal light - the only lights available now are from the headset and the ones that illuminate the keys around 
+			the house
+	. a start screen
+
+Test
+- player could not see the walls even at fairly close distances (or the roof)
+- the text that shows how many keys are left was too far off to the side and could easily go unnoticed
+- the player could teleport too far away from his current postion and with the minimal light, it got disorienting 
+really quickly
+
+Fixes
+- i changed the alpha source of the walls and roof from albedo alpha to metallic source, reducing the metallic and smoothness 
+compnents to prevent the house from feels like an abandoned factory
+- i also moved the text canvas from the side to the center of the headset. when the player touches a key, the text appears 
+and stays for a few seconds 
+- i had to change the way i implemented teleportation because i couldn't reduce the laser pointer distance while using 
+SteamVR_Teleporter and SteamVR_LaserPointer, so i used the VRTK_Pointer and VRTK_StraightPointerRenderer from VRTK

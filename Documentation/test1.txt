@@ -1,0 +1,16 @@
+First user test
+
+About
+- at this point, i had the house with some furniture in the scene, steamvr's teleporter and laser
+ pointer components and some lights.
+
+Test
+- the player felt like he was his normal height in the vr world
+- he felt like the house was supposed to sketchy but it was noted that it wasn't quite so
+- the player also felt like there should have been more broken furniture
+- finally, the player was able to break immersion by teleporting so close to the wall that he could see outside
+
+Fixes
+- i decreased the overall lighting of the house to reduce the need for more furniture and to give it a scarier feel
+- to prevent the player from teleporting too close to the wall, i added colliders to each room making sure that its not 
+too close to any walls 
