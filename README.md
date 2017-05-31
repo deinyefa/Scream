@@ -24,3 +24,6 @@ serves as my final project in the Udacity VR Nanodegree and it contains all the 
 
 # Build
 To play, download the project and open the Build folder. In it you will find the PCBuild.
+
+# Notes
+A full doucumentation of the game is available on my [Medium Page](https://medium.com/@df.eporwei/the-home-stretch-f92491ecc913). You can also visit my portfolio page to see other projects I've worked on
