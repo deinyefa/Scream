@@ -20,7 +20,7 @@ serves as my final project in the Udacity VR Nanodegree and it contains all the 
 
 # External Links
 * Gameplay - [Scream Game-play](https://vimeo.com/219580150)
-* Walkthrough - [Scream Walk-through](https://vimeo.com/219586458)
+* Walkthrough - [Scream Walk-through](https://vimeo.com/219619175)
 
 # Build
 To play, download the project and open the Build folder. In it you will find the PCBuild.
