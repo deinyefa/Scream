@@ -32,7 +32,7 @@ The success of this game was because of the continuous iterative process impleme
 # Sketches
 Here are some sketches I made while I was thinking about the structure of the game. In the first one, I was thinking about making an alternate storyline, where one would evoke fear and the other one, exhiliration (hence the title Scream). I ended up only going with the one storyline — at least for this build. The second sketch shows the floor plan for the house. I used it as a template to build the house on blender.
 
-<p>
+<p align="center">
 <img src="https://cloud.githubusercontent.com/assets/18746993/26679446/0a605e28-46a3-11e7-9579-036feea7cd88.jpg" alt="Alternate Storyline"><br>
 Alternate Storyline Idea<br>
 <img src="https://cloud.githubusercontent.com/assets/18746993/26679543/8f7eb744-46a3-11e7-993b-24f3c84b899a.jpg" alt="Floor plan"><br>
@@ -55,11 +55,11 @@ To fix these issues, I changed the alpha source of the walls and roof from albed
 # Breakdown of final piece
 Below are some screenshots of the game during the development process. Scream starts in a dark place with the only light in the scene illuminating a glowing ball. When the player touches the ball, he/she is taken into the main game scene where they have to collect all the keys in the house to escape. Also, there are monsters.
 
-<p>
+<p align="center">
 <img src="https://cloud.githubusercontent.com/assets/18746993/26679565/ad44de7a-46a3-11e7-8c02-128c4779a110.png" alt="Start Screen"><br>
-Start Screen<br>
+Start Screen<br><br>
 <img src="https://cloud.githubusercontent.com/assets/18746993/26679554/a3ef7d12-46a3-11e7-94f9-977febf2d1a4.png" alt="Fear - The House"><br>
-Fear - The House<br>
+Fear - The House<br><br>
 <img src="https://cloud.githubusercontent.com/assets/18746993/26679572/b350bf50-46a3-11e7-873d-920c2c8dbe6e.png" alt="Monster"><br>
 I call them Almost Alives
 </p>
