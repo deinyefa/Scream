@@ -1,22 +1,21 @@
 # About
-Scream is a horror/thriller VR game that invokes fear in the player and can be won by collecting all the keys in the house. This game
-serves as my final project in the Udacity VR Nanodegree and it contains all the features noted below.
+Six months after enrolling in the VR Nanodegree at Udacity, I have come to my final project. This one was very broad in the 
+sense that we (the students enrolled in this nanodegree) were given full creative control on what we create. The only rules 
+were that the project had to earn a specific number of points in 3 different categories, and had to evoke some kind of 
+emotion.
 
-# Achievements
-### Fundamentals 
-* Scale (normal human height)
-* Animation
-* Locomotion
-* Lighting
-* Video Player
+<p align="center">
+<b><em>My project is called Scream, and as the name suggests, it evokes fear.</em></b>
+</p>
 
-### Completeness
-* 3D Modelling
-* Gamification
-* Diegetic UI
+# Unique Considerations
+Sream was built for the HTC Vive, so a major design consideration was setting clear boundaries within the game since players 
+have control over movement. It would not do to have players traverse to a place outside the gameplay area and break immersion. 
+Another design consideration for my specific game was lighting. Since fear was the emotion I went for, it made sense to make 
+the scene dark, but not too dark where players cannot get their bearings.
 
-### Challenges 
-* User Testing
+# Scream
+The success of this game was because of the continuous iterative process implemented to systematically improve gameplay. Throughout the development of Scream, I tested, found something that needed fixing, fixed it, tested again, found something that needed fixing… and so on.
 
 # External Links
 * Gameplay - [Scream Game-play](https://vimeo.com/219580150)
