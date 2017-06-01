@@ -24,8 +24,8 @@ The success of this game was because of the continuous iterative process impleme
 ### Persona
 
 <p align="center">
-<img src="https://cloud.githubusercontent.com/assets/18746993/22293586/304b1a20-e2de-11e6-9577-4496042806f6.png"><br>
-<h4>Eve</h4>
+<img src="https://cloud.githubusercontent.com/assets/18746993/22293586/304b1a20-e2de-11e6-9577-4496042806f6.png" alt="My persona"><br>
+Eve
 </p>
 
 >For those who don’t already know Eve, she has been my persona for [all my VR projects](https://medium.com/me/stories/public). She is a 21-year-old university student who knows little about VR. Eve is a free spirit who is always ready to try new things. Her favorite quote is, “Life’s too short”, so she lives in the moment.
