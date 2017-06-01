@@ -8,6 +8,7 @@ emotion.
 <b><em>My project is called Scream, and as the name suggests, it evokes fear.</em></b>
 </p>
 
+
 # Unique Considerations
 Sream was built for the HTC Vive, so a major design consideration was setting clear boundaries within the game since players 
 have control over movement. It would not do to have players traverse to a place outside the gameplay area and break immersion. 
@@ -44,12 +45,15 @@ Floor plan
 ### Testing motion throughout the scene
 
 At the point of the first user test, I had built the house, imported some furniture and the SteamVR plugin. I was using the SteamVR_Teleporter and SteamVR_LaserPointer scripts for teleportation. I had also added light to the scene. While testing the main scene, the player felt like the house was supposed to be “sketchy”, but it was not quite. It was also suggested that more broken furniture would the atmosphere more unnerving. Finally, the player was able to break immersion by teleporting so close to the wall that the outside of the house (and the abyss that is Unity’s scene) was seen.
+
 I decreased the overall lighting in the house to reduce the need for more funiture and to create a dark mood. To prevent the player from teleporting too close to the wall, I added colliders to the ground of each room, making sure that they were not too close to any walls.
 
 ### Testing final game play
 
 By the final test, I had included some diegetic features, for example, the touchpad on the left controller blinks to show players how to teleport. I had also imported some sounds and added some animation and a start scene. At this point, the only lights in the house were from the top of the headset and the ones that illuminte the keys (the collectables).
+
 While testing, the player noted that the walls and roof were completely invisible even at fairly close distances, so it was hard to know where he was going. Another note was that the text that keeps track of the keys collected was off to the side and could easily do unnoticed. The final note was that the player was able to move to far away from his current position, and with the minimal light, it got disorienting really quickly.
+
 To fix these issues, I changed the alpha source of the walls and roof from albedo alpha (which absorbs light) to metallic alpha (which reflects light), reducing the metallic and smoothness components to prevent the house from feeling like an abandoned factory. I also moved the text canvas to the center of the headset, when the player collects a key, the text appears — showing how many keys are left — and stays for a few seconds. Finally, I had to change the way I implemented teleportation because I could not reduce the laser pointer distance with the scripts I was using, so I used VRTK’s VRTK_Pointer and VRTK_StraightPointerRenderer scripts instead. This route was better for me because it also indicates to the player how far away teleportation is possible.
 
 # Breakdown of final piece
